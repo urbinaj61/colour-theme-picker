@@ -1,4 +1,3 @@
-body {
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  padding: 10px;
-}
+@import "./index.css";
+@import "./Components/Color/Color.css";
+@import "./Components/colourForm/colourForm.css";

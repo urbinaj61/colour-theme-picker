@@ -1,0 +1,63 @@
+.colour-creator-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 30px 0;
+}
+
+.colour-creator-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #92b5d3;
+  position: relative;
+}
+
+.colour-creator-label {
+  font-size: 1.1rem;
+  color: #4f0b0b;
+}
+
+.colour-creator-roleText,
+.colour-creator-hexText,
+.colour-creator-contrastText {
+  width: 200px;
+  color: #4f0b0b;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.colour-creator-hex {
+  position: absolute;
+  top: 93px;
+  left: 215px;
+  width: 75px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.colour-creator-contrast {
+  position: absolute;
+  top: 154px;
+  left: 215px;
+  width: 75px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.colour-creator-contrastText {
+  margin-bottom: 20px;
+}
+
+.colour-creator-button {
+  border: none;
+  background-color: #4f0b0b;
+  color: #e75353;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
