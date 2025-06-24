@@ -64,3 +64,11 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+main {
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
