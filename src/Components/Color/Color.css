@@ -1,11 +1,29 @@
 .color-card {
-  margin: 0px 10px;
-  padding: 5px;
+  margin: 10px 10px;
+  padding: 10px;
+  width: 300px;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-top-left-radius: 10%;
+  border-bottom-right-radius: 10%;
 }
 
 .color-card-headline {
-  display: inline;
-  padding: 2px 6px;
-  background: black;
-  color: white;
+  width: 100px;
+  height: 40px;
+  padding: 4px 6px;
+  text-align: center;
+  background-color: #6c4545;
+  color: whitesmoke;
+}
+
+.color-card-role,
+.color-card-contrast {
+  margin-top: -7px;
+  margin-left: 10px;
+}
+
+.color-card-contract {
+  margin-top: -8px;
+  margin-left: 10px;
 }
