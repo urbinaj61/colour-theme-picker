@@ -11,11 +11,12 @@ footer {
   height: 10vh;
   position: fixed;
   overflow: hidden;
+  clip-path: polygon(14% 40%, 100% 0%, 100% 100%, 0 100%);
 }
 
 .footer-text {
   font-size: 1.2rem;
-  padding: 40px 0 0 40px;
+  padding: 70px 0 0 200px;
   color: var(--colour-form-text);
   font-weight: bold;
 }

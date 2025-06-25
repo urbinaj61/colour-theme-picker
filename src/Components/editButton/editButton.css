@@ -1,0 +1,11 @@
+.colour-card-edit-button {
+  position: absolute;
+  width: 60px;
+  height: 35px;
+  border: none;
+  bottom: 5px;
+  right: 15px;
+  background-color: var(--colour-card-headline-bg);
+  color: var(--colour-card-headline-text);
+  cursor: pointer;
+}

@@ -13,6 +13,7 @@ header {
   height: 10vh;
   position: static;
   overflow: hidden;
+  clip-path: polygon(0 0, 100% 0%, 83% 64%, 0 100%);
 }
 
 h1 {

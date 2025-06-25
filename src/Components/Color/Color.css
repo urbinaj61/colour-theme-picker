@@ -1,4 +1,5 @@
 .colour-card-container {
+  position: relative;
   margin: 10px 10px;
   background-image: linear-gradient(
     to left top,
@@ -8,7 +9,7 @@
     #bdd975,
     #d4d86f
   );
-  width: 320px;
+  width: 330px;
   height: 150px;
   border-top-left-radius: 10%;
   border-bottom-right-radius: 10%;

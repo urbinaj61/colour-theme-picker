@@ -1,17 +1,32 @@
 import { useState } from "react";
 import { uid } from "uid";
 
-const ColourForm = ({ onAddColour }) => {
-  const [hexColour, setHexColour] = useState("#670909");
-  const [contrastColour, setContrastColour] = useState("#670909");
+const ColourForm = ({ onAddColour, title, colour }) => {
+  const [role, setRole] = useState(colour?.role || "");
+  const [hexColour, setHexColour] = useState(colour?.hex || "#670909");
+  const [contrastColour, setContrastColour] = useState(
+    colour?.contrast || "#670909"
+  );
 
   const handleSubmit = e => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    formData.append("id", uid());
-    onAddColour(Object.fromEntries(formData));
-    e.target.reset();
-    e.target[0].focus();
+    const newColour = {
+      role,
+      hexText: hexColour,
+      hex: hexColour,
+      contrastText: contrastColour,
+      contrast: contrastColour,
+      id: colour?.id || uid(), // reuse id for edits
+    };
+
+    onAddColour(newColour);
+
+    // reset form only if not editing
+    if (!colour) {
+      setRole("");
+      setHexColour("#670909");
+      setContrastColour("#670909");
+    }
   };
 
   return (
@@ -27,6 +42,8 @@ const ColourForm = ({ onAddColour }) => {
           type='text'
           name='role'
           placeholder='Please enter a role'
+          value={role}
+          onChange={e => setRole(e.target.value)}
         />
         <label className='colour-creator-label' htmlFor='hexText'>
           Hex
@@ -69,7 +86,7 @@ const ColourForm = ({ onAddColour }) => {
           value={contrastColour}
           onChange={e => setContrastColour(e.target.value)}
         />
-        <button className='colour-creator-button'>Add Colour</button>
+        <button className='colour-creator-button'>{title}</button>
       </form>
     </section>
   );
