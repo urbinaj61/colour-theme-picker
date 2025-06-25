@@ -5,10 +5,13 @@ import Header from "./Components/header/Header";
 import Footer from "./Components/footer/Footer";
 import Color from "./Components/Color/Color";
 import ColourForm from "./Components/colourForm/ColourForm";
+import useLocalStorageState from "use-local-storage-state";
 import "./App.css";
 
 const App = () => {
-  const [colours, setColours] = useState(initialColors);
+  const [colours, setColours] = useLocalStorageState("colours", {
+    defaultValue: initialColors,
+  });
   const [showWarning, setShowWarning] = useState(false);
   const [id, setId] = useState("");
   const [, setAction] = useState("");
