@@ -1,19 +1,18 @@
 import { useState } from "react";
-
-import { initialColors } from "./lib/colors";
+import { initialColours } from "./lib/colours";
 import Header from "./Components/header/Header";
 import Footer from "./Components/footer/Footer";
-import Color from "./Components/Color/Color";
+import Colour from "./Components/colour/Colour";
 import ColourForm from "./Components/colourForm/ColourForm";
 import useLocalStorageState from "use-local-storage-state";
-import "./App.css";
+import "./App.css"; //Main App css
 
 const App = () => {
   const [colours, setColours] = useLocalStorageState("colours", {
-    defaultValue: initialColors,
+    defaultValue: initialColours,
   });
-  const [showWarning, setShowWarning] = useState(false);
-  const [id, setId] = useState("");
+  const [, setId] = useState("");
+  const [deleteTargetId, setDeleteTargetId] = useState(null);
   const [, setAction] = useState("");
   const [edit, setEdit] = useState(false);
   const [colour, setColour] = useState({});
@@ -31,14 +30,17 @@ const App = () => {
   };
 
   const handleDeleteColour = e => {
-    setId(e.target.id);
-    setShowWarning(true);
+    setDeleteTargetId(e.target.id);
   };
 
   const confirmDelete = () => {
-    setColours(colours.filter(colour => colour.id !== id));
-    setShowWarning(false);
+    setColours(colours.filter(colour => colour.id !== deleteTargetId));
+    setDeleteTargetId(null);
     setAction("");
+  };
+
+  const cancelDelete = () => {
+    setDeleteTargetId(null);
   };
 
   const handleEdit = e => {
@@ -65,16 +67,16 @@ const App = () => {
           {colours.length > 0 ? (
             colours.map(color => {
               return (
-                <Color
+                <Colour
                   key={color.id}
                   color={color}
                   onDeleteColour={handleDeleteColour}
-                  showWarning={showWarning}
-                  setShowWarning={setShowWarning}
+                  isDeleteTarget={deleteTargetId === color.id}
                   setAction={setAction}
                   confirmDelete={confirmDelete}
                   id={color.id}
                   onEdit={handleEdit}
+                  cancelDelete={cancelDelete}
                 />
               );
             })

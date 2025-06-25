@@ -3,16 +3,16 @@ import DeleteMessage from "../deleteMessage/DeleteMessage.jsx";
 import EditButton from "../editButton/EditButton.jsx";
 import CopyToClipBoard from "../copyToClipBoard/CopyToClipBoard.jsx";
 
-export default function Color({
+const Colour = ({
   color,
   onDeleteColour,
-  setShowWarning,
-  showWarning,
   setAction,
   confirmDelete,
-  id,
   onEdit,
-}) {
+  isDeleteTarget,
+  id,
+  cancelDelete,
+}) => {
   const [copyHex, setCopyHex] = useState("");
 
   const writeToClipBoard = async () => {
@@ -47,6 +47,7 @@ export default function Color({
           color: color.contrastText,
         }}
       >
+        <span className='colour-card-theme'>Theme for now</span>
         <h3 className='colour-card-headline'>{color.hex}</h3>
         <CopyToClipBoard onCopyHex={handleCopyHex} copyHex={copyHex} />
         <h4 className='colour-card-role'>{color.role}</h4>
@@ -59,18 +60,18 @@ export default function Color({
         className='colour-card-delete-button'
         onClick={e => onDeleteColour(e)}
       >
-        {showWarning ? "Delete?" : "Delete"}
+        {isDeleteTarget ? "Delete?" : "Delete"}
       </button>
-      {showWarning && (
+      {isDeleteTarget && (
         <DeleteMessage
           setAction={setAction}
           confirmDelete={confirmDelete}
-          showWarning={showWarning}
-          setShowWarning={setShowWarning}
-          id={id}
+          onCancel={cancelDelete}
         />
       )}
       <EditButton onEdit={onEdit} id={id} />
     </section>
   );
-}
+};
+
+export default Colour;

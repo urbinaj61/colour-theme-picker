@@ -28,6 +28,8 @@ const ColourForm = ({ onAddColour, title, colour }) => {
       }
     };
     fetchData();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contrastColour]);
 
   const handleSubmit = e => {
@@ -54,65 +56,74 @@ const ColourForm = ({ onAddColour, title, colour }) => {
   return (
     <section className='colour-creator-container'>
       <form className='colour-creator-form' onSubmit={handleSubmit}>
-        <label className='colour-creator-label' htmlFor='role'>
-          Role
-        </label>
-        <input
-          required
-          id='role'
-          className='colour-creator-roleText'
-          type='text'
-          name='role'
-          placeholder='Please enter a role'
-          value={role}
-          onChange={e => setRole(e.target.value)}
-        />
-        <label className='colour-creator-label' htmlFor='hexText'>
-          Hex
-        </label>
-        <input
-          id='hexText'
-          className='colour-creator-hexText'
-          type='text'
-          name='hexText'
-          placeholder='Please select a hex colour'
-          value={hexColour}
-          onChange={e => setHexColour(e.target.value)}
-        />
-        <input
-          required
-          className='colour-creator-hex'
-          type='color'
-          name='hex'
-          value={hexColour}
-          onChange={e => setHexColour(e.target.value)}
-        />
-        <label className='colour-creator-label' htmlFor='contrastText'>
-          Contrast Colour
-        </label>
-        <input
-          required
-          id='contrastText'
-          className='colour-creator-contrastText'
-          type='text'
-          name='contrastText'
-          placeholder='Please select a contrast colour'
-          value={contrastColour}
-          onChange={e => setContrastColour(e.target.value)}
-        />
-        <input
-          required
-          className='colour-creator-contrast'
-          type='color'
-          name='contrast'
-          value={contrastColour}
-          onChange={e => setContrastColour(e.target.value)}
-        />
-        {data.overall ? (
-          <p className='contrast-message'>{`Overall contrast score ${data.overall}`}</p>
-        ) : (
-          ""
-        )}
+        <aside className='colour-inputs'>
+          <label className='colour-creator-label' htmlFor='select'>
+            Theme
+          </label>
+          <select className='colour-creator-select' name='select' id='select'>
+            <option value=''>Default Theme</option>
+          </select>
+          <label className='colour-creator-label' htmlFor='role'>
+            Role
+          </label>
+          <input
+            required
+            id='role'
+            className='colour-creator-roleText'
+            type='text'
+            name='role'
+            placeholder='Please enter a role'
+            value={role}
+            onChange={e => setRole(e.target.value)}
+          />
+          <label className='colour-creator-label' htmlFor='hexText'>
+            Hex
+          </label>
+          <input
+            id='hexText'
+            className='colour-creator-hexText'
+            type='text'
+            name='hexText'
+            placeholder='Please select a hex colour'
+            value={hexColour}
+            onChange={e => setHexColour(e.target.value)}
+          />
+          <input
+            required
+            className='colour-creator-hex'
+            type='color'
+            name='hex'
+            value={hexColour}
+            onChange={e => setHexColour(e.target.value)}
+          />
+          <label className='colour-creator-label' htmlFor='contrastText'>
+            Contrast Colour
+          </label>
+          <input
+            required
+            id='contrastText'
+            className='colour-creator-contrastText'
+            type='text'
+            name='contrastText'
+            placeholder='Please select a contrast colour'
+            value={contrastColour}
+            onChange={e => setContrastColour(e.target.value)}
+          />
+          <input
+            required
+            className='colour-creator-contrast'
+            type='color'
+            name='contrast'
+            value={contrastColour}
+            onChange={e => setContrastColour(e.target.value)}
+          />
+
+          {data.overall ? (
+            <p className='contrast-message'>{`Overall contrast score ${data.overall}`}</p>
+          ) : (
+            ""
+          )}
+        </aside>
         <button className='colour-creator-button'>{title}</button>
       </form>
     </section>
