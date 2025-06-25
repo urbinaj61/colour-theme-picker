@@ -1,8 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
 .colour-creator-container {
+  position: absolute;
+  top: 115px;
+  left: 20px;
   display: flex;
   flex-direction: column;
   width: 300px;
-  margin: 30px 0;
+  margin: 30px 0 0 0;
 }
 
 .colour-creator-form {
@@ -11,20 +16,20 @@
   width: 300px;
   padding: 5px 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: #92b5d3;
+  background-color: var(--colour-form-bg);
   position: relative;
 }
 
 .colour-creator-label {
   font-size: 1.1rem;
-  color: #4f0b0b;
+  color: var(--colour-form-text);
 }
 
 .colour-creator-roleText,
 .colour-creator-hexText,
 .colour-creator-contrastText {
   width: 200px;
-  color: #4f0b0b;
+  color: var(--colour-form-text);
   padding-left: 5px;
   margin-bottom: 5px;
 }
@@ -53,8 +58,8 @@
 
 .colour-creator-button {
   border: none;
-  background-color: #4f0b0b;
-  color: #e75353;
+  background-color: var(--colour-form-text);
+  color: var(--colour-form-button-text);
   font-size: 1rem;
   font-weight: bold;
   padding: 10px;

@@ -1,29 +1,53 @@
-.color-card {
+.colour-card-container {
   margin: 10px 10px;
-  padding: 10px;
-  width: 300px;
-  display: flex;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-image: linear-gradient(
+    to left top,
+    #78d694,
+    #90d888,
+    #a7d97d,
+    #bdd975,
+    #d4d86f
+  );
+  width: 320px;
+  height: 150px;
   border-top-left-radius: 10%;
   border-bottom-right-radius: 10%;
 }
 
-.color-card-headline {
+.colour-card {
+  padding: 10px;
+  display: flex;
+  height: 80px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-top-left-radius: 10%;
+}
+
+.colour-card-headline {
   width: 100px;
   height: 40px;
   padding: 4px 6px;
   text-align: center;
-  background-color: #6c4545;
-  color: whitesmoke;
+  background-color: var(--colour-card-headline-bg);
+  color: var(--colour-card-headline-text);
 }
 
-.color-card-role,
-.color-card-contrast {
+.colour-card-role,
+.colour-card-contrast {
   margin-top: -7px;
   margin-left: 10px;
 }
 
-.color-card-contract {
+.colour-card-contract {
   margin-top: -8px;
   margin-left: 10px;
+}
+
+.colour-card-delete-button {
+  width: 60px;
+  height: 35px;
+  margin: 30px 0 0 5px;
+  border: none;
+  background-color: var(--colour-card-headline-bg);
+  color: var(--colour-form-button-text);
+  cursor: pointer;
 }

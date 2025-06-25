@@ -1,0 +1,19 @@
+.cancel-button {
+  width: 60px;
+  height: 35px;
+  margin-left: 10px;
+  border: none;
+  background-color: var(--colour-cancel-button-bg);
+  color: var(--colour-card-headline-text);
+  cursor: pointer;
+}
+
+.delete-button {
+  width: 60px;
+  height: 35px;
+  margin-left: 10px;
+  border: none;
+  background-color: var(--colour-delete-button-bg);
+  color: var(--colour-card-headline-text);
+  cursor: pointer;
+}
