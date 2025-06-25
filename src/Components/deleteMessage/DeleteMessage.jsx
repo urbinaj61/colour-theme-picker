@@ -1,18 +1,16 @@
-const DeleteMessage = ({ setAction, setShowWarning, confirmDelete, id }) => {
+const DeleteMessage = ({ setAction, confirmDelete, onCancel }) => {
   return (
     <>
       <button
-        id={id}
         className='cancel-button'
         onClick={() => {
           setAction("cancel");
-          setShowWarning(false);
+          onCancel();
         }}
       >
         Cancel
       </button>
       <button
-        id={id}
         className='delete-button'
         onClick={() => {
           setAction("delete");

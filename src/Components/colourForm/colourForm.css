@@ -1,23 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
 .colour-creator-container {
   position: absolute;
   top: 105px;
   left: 20px;
   display: flex;
   flex-direction: column;
-  width: 300px;
-  margin: 30px 0 0 0;
+  width: 350px;
+  margin-top: 30px;
+  height: 400px;
 }
 
 .colour-creator-form {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 350px;
+  height: 400px;
   padding: 5px 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: var(--colour-form-bg);
   position: relative;
+}
+
+.colour-inputs {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .colour-creator-label {
@@ -32,11 +38,20 @@
   color: var(--colour-form-text);
   padding-left: 5px;
   margin-bottom: 5px;
+  outline: none;
+  border: none;
+}
+
+.colour-creator-roleText[type="text"],
+.colour-creator-hexText[type="text"],
+.colour-creator-contrastText[type="text"] {
+  background-color: var(--colour-input-bg);
+  color: var(--colour-form-text);
 }
 
 .colour-creator-hex {
   position: absolute;
-  top: 93px;
+  top: 189px;
   left: 215px;
   width: 75px;
   height: 30px;
@@ -45,7 +60,7 @@
 
 .colour-creator-contrast {
   position: absolute;
-  top: 154px;
+  top: 246px;
   left: 215px;
   width: 75px;
   height: 30px;
@@ -53,7 +68,7 @@
 }
 
 .colour-creator-contrastText {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .colour-creator-button {
@@ -63,12 +78,27 @@
   font-size: 1rem;
   font-weight: bold;
   padding: 10px;
-  margin-bottom: 4px;
+  margin: 55px 0 4px 0;
   cursor: pointer;
 }
 
 .contrast-message {
-  margin-bottom: 5px;
+  position: absolute;
+  bottom: 60px;
+  left: 12px;
   color: var(--colour-form-text);
   font-weight: bold;
+}
+
+.colour-creator-select {
+  margin: 10px 0;
+  width: 200px;
+  height: 30px;
+  outline: none;
+  border: none;
+}
+
+.colour-creator-select,
+option {
+  background-color: var(--colour-input-bg);
 }

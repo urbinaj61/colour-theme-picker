@@ -2,7 +2,7 @@
   width: 120px;
   height: 40px;
   border: none;
-  margin-left: 5px;
+  margin: 45px 0 0 5px;
   background-color: var(--colour-card-headline-bg);
   color: var(--colour-copy-button-text);
   font-weight: bold;

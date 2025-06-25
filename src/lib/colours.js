@@ -1,4 +1,4 @@
-export const initialColors = [
+export const initialColours = [
   { id: "c1", role: "primary main", hex: "#ff4a11", contrastText: "#ffffff" }, // Vibrant orange
   { id: "c2", role: "primary dark", hex: "#c73e0b", contrastText: "#ffffff" }, // Darker shade of orange
   { id: "c3", role: "primary light", hex: "#ff7a3e", contrastText: "#000000" }, // Lighter shade of orange
