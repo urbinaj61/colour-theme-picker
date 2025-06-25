@@ -1,0 +1,16 @@
+.colour-copy-hex-button {
+  width: 120px;
+  height: 40px;
+  border: none;
+  margin-left: 5px;
+  background-color: var(--colour-card-headline-bg);
+  color: var(--colour-copy-button-text);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.success {
+  margin: -25px 0 0 0;
+  font-size: 0.5;
+  line-height: 1%;
+}
