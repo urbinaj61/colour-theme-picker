@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { uid } from "uid";
 
 const ColourForm = ({ onAddColour, title, colour }) => {
@@ -8,6 +8,28 @@ const ColourForm = ({ onAddColour, title, colour }) => {
     colour?.contrast || "#670909"
   );
 
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://www.aremycolorsaccessible.com/api/are-they",
+          {
+            mode: "cors",
+            method: "POST",
+            body: JSON.stringify({ colors: [hexColour, contrastColour] }),
+          }
+        );
+        const receivedData = await response.json();
+        setData(receivedData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, [contrastColour]);
+
   const handleSubmit = e => {
     e.preventDefault();
     const newColour = {
@@ -16,7 +38,7 @@ const ColourForm = ({ onAddColour, title, colour }) => {
       hex: hexColour,
       contrastText: contrastColour,
       contrast: contrastColour,
-      id: colour?.id || uid(), // reuse id for edits
+      id: colour?.id || uid(),
     };
 
     onAddColour(newColour);
@@ -86,6 +108,11 @@ const ColourForm = ({ onAddColour, title, colour }) => {
           value={contrastColour}
           onChange={e => setContrastColour(e.target.value)}
         />
+        {data.overall ? (
+          <p className='contrast-message'>{`Overall contrast score ${data.overall}`}</p>
+        ) : (
+          ""
+        )}
         <button className='colour-creator-button'>{title}</button>
       </form>
     </section>

@@ -56,7 +56,7 @@ const App = () => {
         {edit && (
           <ColourForm
             onAddColour={handleAddColour}
-            title='Edit Colour'
+            title='Update Colour'
             colour={colour}
           />
         )}
