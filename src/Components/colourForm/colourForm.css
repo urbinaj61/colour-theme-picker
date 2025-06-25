@@ -2,7 +2,7 @@
 
 .colour-creator-container {
   position: absolute;
-  top: 115px;
+  top: 105px;
   left: 20px;
   display: flex;
   flex-direction: column;
@@ -65,4 +65,10 @@
   padding: 10px;
   margin-bottom: 4px;
   cursor: pointer;
+}
+
+.contrast-message {
+  margin-bottom: 5px;
+  color: var(--colour-form-text);
+  font-weight: bold;
 }
