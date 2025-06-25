@@ -19,9 +19,25 @@
 }
 
 body {
+  background-image: linear-gradient(
+    to right top,
+    #5d5f87,
+    #3d658b,
+    #0f6a86,
+    #006d79,
+    #006e64,
+    #0c6f56,
+    #227046,
+    #376f33,
+    #4a7230,
+    #5a742f,
+    #697630,
+    #787832
+  );
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
+  height: 100vh;
 }
 
 img,
@@ -56,21 +72,6 @@ h6 {
 }
 
 main {
-  background-image: linear-gradient(
-    to right top,
-    #5d5f87,
-    #3d658b,
-    #0f6a86,
-    #006d79,
-    #006e64,
-    #0c6f56,
-    #227046,
-    #376f33,
-    #4a7230,
-    #5a742f,
-    #697630,
-    #787832
-  );
   display: flex;
   height: 80vh;
   overflow: hidden;

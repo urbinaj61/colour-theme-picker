@@ -12,9 +12,19 @@ const App = () => {
   const [showWarning, setShowWarning] = useState(false);
   const [id, setId] = useState("");
   const [, setAction] = useState("");
+  const [edit, setEdit] = useState(false);
+  const [colour, setColour] = useState({});
 
   const handleAddColour = formData => {
-    setColours([...colours, formData]);
+    if (colours.find(colour => colour.id === formData.id)) {
+      setColours(
+        colours.map(colour => (colour.id === formData.id ? formData : colour))
+      );
+      setEdit(false);
+      setColour({});
+    } else {
+      setColours([...colours, formData]);
+    }
   };
 
   const handleDeleteColour = e => {
@@ -28,11 +38,26 @@ const App = () => {
     setAction("");
   };
 
+  const handleEdit = e => {
+    setId(e.target.id);
+    setEdit(!edit);
+    setColour(colours.find(colour => colour.id === e.target.id));
+  };
+
   return (
     <>
       <Header />
       <main>
-        <ColourForm onAddColour={handleAddColour} />
+        <ColourForm onAddColour={handleAddColour} title='Add Colour' />
+
+        {edit && (
+          <ColourForm
+            onAddColour={handleAddColour}
+            title='Edit Colour'
+            colour={colour}
+          />
+        )}
+
         <section className='colour-roles'>
           {colours.length > 0 ? (
             colours.map(color => {
@@ -45,7 +70,8 @@ const App = () => {
                   setShowWarning={setShowWarning}
                   setAction={setAction}
                   confirmDelete={confirmDelete}
-                  id={id}
+                  id={color.id}
+                  onEdit={handleEdit}
                 />
               );
             })

@@ -1,4 +1,5 @@
 import DeleteMessage from "../deleteMessage/DeleteMessage.jsx";
+import EditButton from "../editButton/EditButton.jsx";
 
 export default function Color({
   color,
@@ -8,6 +9,7 @@ export default function Color({
   setAction,
   confirmDelete,
   id,
+  onEdit,
 }) {
   return (
     <section className='colour-card-container'>
@@ -40,6 +42,7 @@ export default function Color({
           id={id}
         />
       )}
+      <EditButton onEdit={onEdit} id={id} />
     </section>
   );
 }
