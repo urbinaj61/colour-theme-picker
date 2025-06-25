@@ -10,6 +10,8 @@ const ColourForm = ({ onAddColour }) => {
     const formData = new FormData(e.target);
     formData.append("id", uid());
     onAddColour(Object.fromEntries(formData));
+    e.target.reset();
+    e.target[0].focus();
   };
 
   return (

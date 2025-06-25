@@ -1,0 +1,21 @@
+footer {
+  background-image: linear-gradient(
+    to left top,
+    #78d694,
+    #90d888,
+    #a7d97d,
+    #bdd975,
+    #d4d86f
+  );
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  overflow: hidden;
+}
+
+.footer-text {
+  font-size: 1.2rem;
+  padding: 40px 0 0 40px;
+  color: var(--colour-form-text);
+  font-weight: bold;
+}
