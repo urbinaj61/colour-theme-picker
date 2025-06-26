@@ -8,13 +8,19 @@ const ThemeAdd = ({ showInput, setShowInput }) => {
         <option value=''>Default Theme</option>
       </select>
       <button
+        type='button'
         className='theme-buttons'
         onClick={() => setShowInput(!showInput)}
       >
         Add
       </button>
-      <button className='theme-buttons'>Edit</button>
-      <button className='theme-buttons'>Delete</button>
+
+      <button type='button' disabled className='theme-buttons'>
+        Edit
+      </button>
+      <button type='button' disabled className='theme-buttons'>
+        Delete
+      </button>
 
       {showInput && (
         <input
