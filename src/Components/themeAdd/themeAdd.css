@@ -36,8 +36,18 @@ option {
   left: 280px;
 }
 
+.theme-buttons:nth-child(4):disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 .theme-buttons:nth-child(5) {
   left: 330px;
+}
+
+.theme-buttons:nth-child(5):disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
 .theme-input {

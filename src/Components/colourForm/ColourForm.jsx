@@ -2,7 +2,13 @@ import { useState, useEffect } from "react";
 import ThemeAdd from "../themeAdd/ThemeAdd";
 import { uid } from "uid";
 
-const ColourForm = ({ onAddColour, title, colour }) => {
+const ColourForm = ({
+  onAddColour,
+  title,
+  colour,
+  showInput,
+  setShowInput,
+}) => {
   const [role, setRole] = useState(colour?.role || "");
   const [hexColour, setHexColour] = useState(colour?.hex || "#670909");
   const [contrastColour, setContrastColour] = useState(
@@ -10,7 +16,6 @@ const ColourForm = ({ onAddColour, title, colour }) => {
   );
 
   const [data, setData] = useState({});
-  const [showInput, setShowInput] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {

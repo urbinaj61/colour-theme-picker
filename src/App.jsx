@@ -16,6 +16,7 @@ const App = () => {
   const [, setAction] = useState("");
   const [edit, setEdit] = useState(false);
   const [colour, setColour] = useState({});
+  const [showInput, setShowInput] = useState(false);
 
   const handleAddColour = formData => {
     if (colours.find(colour => colour.id === formData.id)) {
@@ -53,7 +54,13 @@ const App = () => {
     <>
       <Header />
       <main>
-        <ColourForm onAddColour={handleAddColour} title='Add Colour' />
+        <ColourForm
+          onAddColour={handleAddColour}
+          title='Add Colour'
+          showInput={showInput}
+          setShowInput={setShowInput}
+          colour={colour}
+        />
 
         {edit && (
           <ColourForm
