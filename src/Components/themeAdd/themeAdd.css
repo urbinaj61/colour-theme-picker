@@ -1,0 +1,50 @@
+.colour-creator-label {
+  font-size: 1.1rem;
+  color: var(--colour-form-text);
+}
+
+.colour-creator-select {
+  position: relative;
+  margin: 5px 0;
+  width: 200px;
+  height: 30px;
+  outline: none;
+  border: none;
+}
+
+.colour-creator-select,
+option {
+  background-color: var(--colour-input-bg);
+}
+
+.theme-buttons {
+  position: absolute;
+  top: 38px;
+  border: none;
+  background-color: var(--colour-form-text);
+  color: var(--colour-form-button-text);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.theme-buttons:nth-child(3) {
+  left: 230px;
+}
+
+.theme-buttons:nth-child(4) {
+  left: 280px;
+}
+
+.theme-buttons:nth-child(5) {
+  left: 330px;
+}
+
+.theme-input {
+  position: absolute;
+  top: 90px;
+  width: 200px;
+  height: 30px;
+  border: none;
+  outline: none;
+}
