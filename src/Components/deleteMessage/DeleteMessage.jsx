@@ -1,3 +1,5 @@
+//This component handles the confirmation delete or cancel logic
+
 const DeleteMessage = ({ setAction, confirmDelete, onCancel }) => {
   return (
     <>

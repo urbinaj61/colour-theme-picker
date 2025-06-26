@@ -1,3 +1,5 @@
+// A work in progress. This component will handle the add theme functionality
+
 const ThemeAdd = ({ showInput, setShowInput }) => {
   return (
     <>

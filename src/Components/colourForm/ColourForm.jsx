@@ -17,6 +17,7 @@ const ColourForm = ({
 
   const [data, setData] = useState({});
 
+  //We use a useEffect to fetch the contrast data from this API
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -36,9 +37,11 @@ const ColourForm = ({
     };
     fetchData();
 
+    //This will activate every time the contrastColour state changes
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contrastColour]);
 
+  //Submit the form
   const handleSubmit = e => {
     e.preventDefault();
     const newColour = {
