@@ -47,7 +47,7 @@ const Colour = ({
           color: color.contrastText,
         }}
       >
-        <span className='colour-card-theme'>Theme for now</span>
+        <span className='colour-card-theme'>Default Theme</span>
         <h3 className='colour-card-headline'>{color.hex}</h3>
         <CopyToClipBoard onCopyHex={handleCopyHex} copyHex={copyHex} />
         <h4 className='colour-card-role'>{color.role}</h4>

@@ -4,16 +4,16 @@
   left: 20px;
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 500px;
   margin-top: 30px;
-  height: 400px;
+  height: 450px;
 }
 
 .colour-creator-form {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: 400px;
+  width: 500px;
+  height: 450px;
   padding: 5px 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: var(--colour-form-bg);
@@ -21,7 +21,7 @@
 }
 
 .colour-inputs {
-  margin-top: 25px;
+  margin-top: 55px;
   display: flex;
   flex-direction: column;
 }
@@ -51,7 +51,7 @@
 
 .colour-creator-hex {
   position: absolute;
-  top: 189px;
+  top: 208px;
   left: 215px;
   width: 75px;
   height: 30px;
@@ -60,7 +60,7 @@
 
 .colour-creator-contrast {
   position: absolute;
-  top: 246px;
+  top: 266px;
   left: 215px;
   width: 75px;
   height: 30px;
@@ -78,7 +78,7 @@
   font-size: 1rem;
   font-weight: bold;
   padding: 10px;
-  margin: 55px 0 4px 0;
+  margin: 90px 0 4px 0;
   cursor: pointer;
 }
 
@@ -88,17 +88,4 @@
   left: 12px;
   color: var(--colour-form-text);
   font-weight: bold;
-}
-
-.colour-creator-select {
-  margin: 10px 0;
-  width: 200px;
-  height: 30px;
-  outline: none;
-  border: none;
-}
-
-.colour-creator-select,
-option {
-  background-color: var(--colour-input-bg);
 }

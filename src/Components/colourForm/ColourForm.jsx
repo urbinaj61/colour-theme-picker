@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ThemeAdd from "../themeAdd/ThemeAdd";
 import { uid } from "uid";
 
 const ColourForm = ({ onAddColour, title, colour }) => {
@@ -9,6 +10,7 @@ const ColourForm = ({ onAddColour, title, colour }) => {
   );
 
   const [data, setData] = useState({});
+  const [showInput, setShowInput] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,18 +58,13 @@ const ColourForm = ({ onAddColour, title, colour }) => {
   return (
     <section className='colour-creator-container'>
       <form className='colour-creator-form' onSubmit={handleSubmit}>
+        <ThemeAdd showInput={showInput} setShowInput={setShowInput} />
         <aside className='colour-inputs'>
-          <label className='colour-creator-label' htmlFor='select'>
-            Theme
-          </label>
-          <select className='colour-creator-select' name='select' id='select'>
-            <option value=''>Default Theme</option>
-          </select>
           <label className='colour-creator-label' htmlFor='role'>
             Role
           </label>
           <input
-            required
+            required={!showInput}
             id='role'
             className='colour-creator-roleText'
             type='text'
