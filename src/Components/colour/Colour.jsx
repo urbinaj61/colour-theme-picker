@@ -15,6 +15,7 @@ const Colour = ({
 }) => {
   const [copyHex, setCopyHex] = useState("");
 
+  //Copy to clipboard
   const writeToClipBoard = async () => {
     try {
       await navigator.clipboard.writeText(color.hex);
@@ -23,11 +24,13 @@ const Colour = ({
     }
   };
 
+  //Copy button handler
   const handleCopyHex = () => {
     setCopyHex(<span className='success'>success!</span>);
     writeToClipBoard();
   };
 
+  //When we write success to the copyHex state we initialise a timer for 3 seconds
   useEffect(() => {
     if (copyHex !== "") {
       const timer = setTimeout(() => {

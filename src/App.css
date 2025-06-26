@@ -1,3 +1,5 @@
+/* I have modularised the css. Only the App.css is linked */
+
 @import "./index.css";
 @import "./Components/colour/colour.css";
 @import "./Components/colourForm/colourForm.css";

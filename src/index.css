@@ -1,3 +1,5 @@
+/* I have placed all colours used in this app into reusable variables */
+
 #root {
   --colour-card-headline-bg: #6c4545;
   --colour-card-headline-text: whitesmoke;
@@ -73,6 +75,7 @@ h6 {
   isolation: isolate;
 }
 
+/* The main section holds the form and the role cards */
 main {
   display: flex;
   height: 80vh;
