@@ -55,12 +55,10 @@ const ColourForm = ({
 
     onAddColour(newColour);
 
-    // reset form only if not editing
-    if (!colour) {
-      setRole("");
-      setHexColour("#670909");
-      setContrastColour("#670909");
-    }
+    // reset form
+    setRole("");
+    setHexColour("#670909");
+    setContrastColour("#670909");
   };
 
   return (
@@ -72,6 +70,7 @@ const ColourForm = ({
             Role
           </label>
           <input
+            autoFocus
             required={!showInput}
             id='role'
             className='colour-creator-roleText'
