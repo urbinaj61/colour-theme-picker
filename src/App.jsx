@@ -24,10 +24,10 @@ const App = () => {
   const [showInput, setShowInput] = useState(false);
 
   //Add colour and edit role functionality
-  const handleAddColour = formData => {
-    if (colours.find(colour => colour.id === formData.id)) {
+  const handleAddColour = (formData) => {
+    if (colours.find((colour) => colour.id === formData.id)) {
       setColours(
-        colours.map(colour => (colour.id === formData.id ? formData : colour))
+        colours.map((colour) => (colour.id === formData.id ? formData : colour))
       );
       setEdit(false);
       setColour({});
@@ -37,13 +37,13 @@ const App = () => {
   };
 
   //Delete the role
-  const handleDeleteColour = e => {
+  const handleDeleteColour = (e) => {
     setDeleteTargetId(e.target.id);
   };
 
   //Handles the confirmation delete or cancel functionality
   const confirmDelete = () => {
-    setColours(colours.filter(colour => colour.id !== deleteTargetId));
+    setColours(colours.filter((colour) => colour.id !== deleteTargetId));
     setDeleteTargetId(null);
     setAction("");
   };
@@ -54,10 +54,10 @@ const App = () => {
   };
 
   //Edit role
-  const handleEdit = e => {
+  const handleEdit = (e) => {
     setId(e.target.id);
     setEdit(!edit);
-    setColour(colours.find(colour => colour.id === e.target.id));
+    setColour(colours.find((colour) => colour.id === e.target.id));
   };
 
   return (
@@ -65,25 +65,27 @@ const App = () => {
       <Header />
       <main>
         {/* Display the add role component */}
-        <ColourForm
-          onAddColour={handleAddColour}
-          title='Add Colour'
-          showInput={showInput}
-          setShowInput={setShowInput}
-          colour={colour}
-        />
+        {!edit && (
+          <ColourForm
+            onAddColour={handleAddColour}
+            title="Add Colour"
+            showInput={showInput}
+            setShowInput={setShowInput}
+            colour={colour}
+          />
+        )}
         {/* Display the edit role component. Same as add but with different props */}
         {edit && (
           <ColourForm
             onAddColour={handleAddColour}
-            title='Update Colour'
+            title="Update Colour"
             colour={colour}
           />
         )}
         {/* Map through the colours array to display each role as a card. */}
-        <section className='colour-roles'>
+        <section className="colour-roles">
           {colours.length > 0 ? (
-            colours.map(color => {
+            colours.map((color) => {
               return (
                 <Colour
                   key={color.id}
@@ -100,7 +102,7 @@ const App = () => {
             })
           ) : (
             // If no roles in the colours array display message
-            <h3 className='add-colours-message'>
+            <h3 className="add-colours-message">
               Please add colours to your theme
             </h3>
           )}
